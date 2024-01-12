@@ -3,8 +3,9 @@
 The aim of this project is to create a machine learning model that predicts to which category a pigmented skin lesion belongs.
 Distinguished 3 categories: "melanocytic nevi (nv)", "melanoma (mel)" and "other".
 
+## Setup 
 The dataset used in this project is obtained from [here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T).
-To work with this repository download and extract the dataset in 'DATA' directory.
+To work with this repository download and extract the dataset in 'DATA' directory as shown below:
 
 ## Data preparation and analysis
 
