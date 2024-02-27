@@ -1,5 +1,14 @@
-# Skin-cancer-prediction 
+# Skin-cancer-prediction - bachelor's thesis
+## ## Table of contents: 
+* [General info](#general-info)
+* [Setup](#setup-)
+* [Data preparation and analysis](#data-preparation-and-analysis)
+* [Machine Learning Models](#machine-learning-models)
+* [Models evaluation](#models-evaluation)
+* [Results and conclusions](#results-and-conclusions)
+* [Citation](#citations)
 
+### General info
 The aim of this project is to create a machine learning model that predicts to which category a pigmented skin lesion belongs.
 Distinguished 3 categories: "melanocytic nevi (nv)", "melanoma (mel)" and "other".
 

@@ -3,6 +3,12 @@ import seaborn as sns
 
 
 def count_plot(df_name, column_name: str):
+    """
+    creates count plot
+    :param df_name: DataFrame in which column interested us exist
+    :param column_name: feature of which we want to see distribution
+    :return: count plot
+    """
     plt.figure(figsize=(8, 4), dpi=200)
     ax = df_name[column_name].value_counts().plot(kind="bar")
     plt.xticks(rotation=0)
@@ -15,6 +21,11 @@ def count_plot(df_name, column_name: str):
 
 
 def diagnose(diagnosis):
+    """
+    assigns patient's diagnosis to particular category
+    :param diagnosis: type of skin lesion
+    :return: str: name of category
+    """
     if diagnosis == "nv":
         return "melanocytic nevi"
     elif diagnosis == "mel":
@@ -24,6 +35,12 @@ def diagnose(diagnosis):
 
 
 def group_plot(df_name, column_name: str):
+    """
+    groups three plots for three different categories
+    :param df_name: used DataFrame
+    :param column_name: feature of which we want to see distributions
+    :return: merged three count plots
+    """
     fig, ax = plt.subplots(1, 3, figsize=(8, 4))
 
     sns.countplot(
