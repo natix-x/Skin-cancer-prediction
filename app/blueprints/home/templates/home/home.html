@@ -6,35 +6,32 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
       </svg>
-      <h1>Check your skin lesion</h1>
+      <h1>Sprawdź swoją zmianę skórną</h1>
    </div>
 </div>
-
-<div>
-   <form id="upload-file" method="post" enctype="multipart/form-data">
-      <label for="imageUpload" class="upload-label">
-         Choose your photo
-      </label>
-      <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
-   </form>
-
-   <div class="image-section" style="display:none;">
-      <div class="img-preview">
-         <div id="imagePreview">
+<div class="container-fluid">
+   <div class="col-xs-1 text-center">
+      <form id="upload-file" method="post" enctype="multipart/form-data">
+         <label for="imageUpload" class="upload-label">
+         Wybierz zdjęcie
+         </label>
+         <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+      </form>
+      <div class="image-section" style="display:none;">
+         <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+         </div>
+         <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
          </div>
       </div>
-      <div>
-         <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
-      </div>
+      <div class="loader" style="display:none;"></div>
+      <h3 id="result">
+         <span id="result-span"></span>
+      </h3>
    </div>
-
-   <div class="loader" style="display:none;"></div>
-
-   <h3 id="result">
-      <span id="result-span"></span>
-   </h3>
 </div>
-
 <script>
    $(document).ready(function () {
       // Show image preview
@@ -70,7 +67,12 @@
             success: function (data) {
                // Get and display the result
                $('.loader').hide();
-               $('#result-span').html(data.prediction);
+               var resultHtml = '';
+                var sortedPredictions = Object.entries(data.prediction).sort((a, b) => b[1] - a[1]); // Sort predictions by probability
+            sortedPredictions.forEach(function (prediction) {
+                resultHtml += '<p>' + prediction[0] + ': ' + (prediction[1] * 100).toFixed(2) + '%</p>';
+            });
+               $('#result-span').html(resultHtml);
                $('#result').show();
                $('#btn-predict').show();
             },
