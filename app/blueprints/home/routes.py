@@ -3,6 +3,8 @@ from flask import render_template, request, jsonify
 import numpy as np
 import os
 
+os.environ["PYTHONIOENCODING"] = "utf-8"
+
 # tf environment configuration
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "1"

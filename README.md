@@ -54,7 +54,7 @@ Web app is written in Flask and enables user to upload his own photo with skin l
 
 <img src="DATA/plots/screenshot_web_app_example.png" alt="drawing" style="width:300px;"/>
 
-* Back-end: Python 3.11+
+* Back-end: Flask
 * Front-end framework(CSS + JavaScript): Boostrap v5.3
 * Dynamic operations (uploading images and ajax): JavaScript: jQuery 3.6.0 minified version
 ### Requirements
@@ -62,9 +62,12 @@ Web app is written in Flask and enables user to upload his own photo with skin l
 * As each part (data analysis, data modelling and app) could be explored separately, for each part is created file 'requirements.txt' that contains a list of packages or libraries needed to work on selected part
 * 'requirements.txt' outside listed part directories contains packages needed for all parts
 ### Setup
-1. First, clone this repository
+1. First, clone this repository and go into it.
    ```sh
    git clone https://github.com/natix-x/Skin-cancer-prediction.git
+   ```
+   ```sh
+   cd Skin-cancer-prediction
    ```
 2. To work with data analysis and data modeling parts [download](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T) and extract the dataset in 'DATA' directory as shown below:
    ```
@@ -75,7 +78,18 @@ Web app is written in Flask and enables user to upload his own photo with skin l
     └── HAM10000_metadata
    ```
    Place all images into 'HAM10000_images_part_1_and_2' directory.
-3. To just explore web app:
+3. For just exploring web app:
+   * for Windows users:
+    ```sh
+    RunApp.bat
+   ```
+   * for Linux or macOS users:
+   ```sh
+    chmod +x venv_setup.sh run_app.sh
+   ```
+   ```sh
+    ./run_app.sh
+   ```
 ### Citations
 Tschandl, Philipp, 2018, "The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions", https://doi.org/10.7910/DVN/DBW86T, Harvard Dataverse, V4, UNF:6:KCZFcBLiFE5ObWcTc2ZBOA== [fileUNF]
 
