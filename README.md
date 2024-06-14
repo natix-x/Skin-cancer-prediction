@@ -1,8 +1,8 @@
 # Skin cancer prediction
+Bachelor thesis exploring usage of CNN in skin cancer diagnosis.
 ## Table of contents: 
 * [General info](#general-info)
 * [Data preparation and analysis](#data-preparation-and-analysis)
-* [Machine Learning](#machine-learning)
 * [Deep Learning](#deep-learning)
 * [Final Model](#final-model)
 * [Web Application](#web-application)
@@ -11,8 +11,8 @@
 * [Citation](#citations)
 
 ### General info
-The aim of this project is to create a simple web application using Flask for deploying a Convolutional Neural Network (CNN) model that classifies skin lesions into 7 different categories. This project focuses on building the most accurate Keras Sequential model without using transfer learning for better understanding neural networks and their learning process. The web app is designed to be as user-friendly and straightforward as possible.
-The dataset used in this project is obtained from [here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T).
+The aim of this project is to create a simple web application using Flask for deploying created Convolutional Neural Network (CNN) model that classifies skin lesions into 7 different categories. This project focuses on building the most accurate Keras Sequential model without using transfer learning for better understanding neural networks and their learning process. The web app is designed to be as user-friendly and straightforward as possible.
+The dataset used in this project is obtained from [here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T).[1]
 ### Data preparation and analysis
 1. Metadata analysis.
 2. Categories to which lesions are classified are listed below:
@@ -23,8 +23,6 @@ The dataset used in this project is obtained from [here](https://dataverse.harva
    * bkl - benign keratosis-like lesions
    * df - dermatofibroma
    * vasc - vascular lesions
-### Machine Learning
-... in progress ...
 ### Deep learning
 Chosen neural network: CNN
 1. Creation of a simple model architecture in order to see how it performs on extremely imbalanced dataset. 
@@ -43,7 +41,7 @@ Chosen neural network: CNN
 8. Saving final model (.keras format)
 ### Final Model
 Model architecture:
-![architecture](DATA/plots/CNN_final_model_architecture.png)
+![architecture](DATA/pictures/CNN_final_model_architecture.png)
 Confusion matrix:
 
 <img src="DATA/plots/confusion_matrix_balanced_dataset_final_model.png" alt="drawing" style="width:300px;"/>
@@ -52,7 +50,7 @@ Accuracy: 70%
 ### Web Application
 Web app is written in Flask and enables user to upload his own photo with skin lesion and get the prediction as a list of percentages of belonging to each classes in descending order. As this project is for university studies text on the website is in polish.
 
-<img src="DATA/plots/screenshot_web_app_example.png" alt="drawing" style="width:300px;"/>
+<img src="DATA/pictures/screenshot_web_app_example.png" alt="drawing" style="width:300px;"/>
 
 * Back-end: Flask
 * Front-end framework(CSS + JavaScript): Boostrap v5.3
@@ -91,7 +89,7 @@ Web app is written in Flask and enables user to upload his own photo with skin l
     ./run_app.sh
    ```
 ### Citations
-Tschandl, Philipp, 2018, "The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions", https://doi.org/10.7910/DVN/DBW86T, Harvard Dataverse, V4, UNF:6:KCZFcBLiFE5ObWcTc2ZBOA== [fileUNF]
+[1] Tschandl, Philipp, 2018, "The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions", https://doi.org/10.7910/DVN/DBW86T, Harvard Dataverse, V4, UNF:6:KCZFcBLiFE5ObWcTc2ZBOA== [fileUNF]
 
 
 
